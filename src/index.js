@@ -558,12 +558,16 @@ export default class extends Component {
    */
 
   scrollTo = (index, animated = true) => {
+
+    /* comment out to try to fix bug going to landscape mode in newer ios sdk builds
+       was always going back to index 0 rotating to landscape
     if (
       this.internals.isScrolling ||
       this.state.total < 2 ||
       index == this.state.index
     )
       return
+    */
 
     const state = this.state
     const diff = this.state.index + (index - this.state.index)
